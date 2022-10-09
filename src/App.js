@@ -1,7 +1,7 @@
 
 import React,{Component} from 'react';
 import Joker from './Joker';
-
+import AddJoks from './Addjoks'
 class App extends Component {
     state ={
       jok :[
@@ -15,6 +15,7 @@ class App extends Component {
     <div className="App">
      <h2>First React App</h2>
      <Joker joker={this.state.jok}/>
+     <AddJoks addjoks ={this.state.jok}/>
     </div>
   )
   }
