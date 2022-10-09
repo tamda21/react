@@ -13,7 +13,7 @@ class AddJoks extends Component {
   }
   handelSubmit=(e)=>{
     e.preventDefault();
-    console.log(this.state);
+    this.props.addData(this.state)
   }
   render(){
     return(

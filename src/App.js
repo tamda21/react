@@ -9,13 +9,28 @@ class App extends Component {
         {name:"meryem",age:27,color:"brown",id:2},
         {name:"loujaine",age:1,color:"pink",id:3}
         ]
+    };
+     handelData =(jok)=>{
+      jok.id = Math.floor(Math.random()*10);
+      let joks =[...this.state.jok,jok];
+      this.setState({
+        jok:joks
+      })
+    }
+    deleteData =(id)=>{
+      let delt=this.state.jok.filter(j=>{
+        return id!==j.id
+      })
+      this.setState({
+        jok:delt
+      })
     }
   render() {
   return (
     <div className="App">
      <h2>First React App</h2>
-     <Joker joker={this.state.jok}/>
-     <AddJoks addjoks ={this.state.jok}/>
+     <Joker joker={this.state.jok} deleteData={this.deleteData}/>
+     <AddJoks addData ={this.handelData}/>
     </div>
   )
   }
